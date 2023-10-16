@@ -28,7 +28,7 @@ commands:
           command: |
             echo "Checking for migrations..."
             # Curl command here to see if there was a successful migration associated with the workflow id, store result in SUCCESS variable
-            SUCCESS=$(curl --insecure https://kvdb.io/THUz855ChwbmbeGmgtZmU3/migration_${CIRCLE_WORKFLOW_ID:0:7})
+            SUCCESS=$(curl --insecure https://kvdb.io/DG6z5ZtedjGhBEiEM83Z5o/migration_${CIRCLE_WORKFLOW_ID:0:7})
             # SUCCESS = 1
             echo "SUCCESS= ${SUCCESS}"
             if [[ $SUCCESS==1 ]];
@@ -207,7 +207,7 @@ jobs:
       - checkout
       # Add ssh keys with fingerprint
       - add_ssh_keys:
-          fingerprints: ["a6:d5:3b:da:cc:83:25:75:8c:40:b0:bd:e7:03:6b:1f"]
+          fingerprints: ["ce:af:8a:90:9b:fa:10:ef:c0:9c:45:a7:c1:46:cb:45"]
       # attach workspace
       - attach_workspace:
           at: ~/
@@ -269,7 +269,7 @@ jobs:
             then
                   # using kvdb.io
                   # curl -k https://kvdb.io/3F7kRvg2JNu6tZkt1yrqV2/migration_${CIRCLE_WORKFLOW_ID:0:7}  -d '1'
-                  curl -k https://kvdb.io/THUz855ChwbmbeGmgtZmU3/migration_${CIRCLE_WORKFLOW_ID:0:7}  -d '1'
+                  curl -k https://kvdb.io/DG6z5ZtedjGhBEiEM83Z5o/migration_${CIRCLE_WORKFLOW_ID:0:7}  -d '1'
             fi
             # exit 1
      # Here's where you will add some code to rollback on failure  
@@ -326,7 +326,7 @@ jobs:
           keys: [backend-build]
       # Add ssh keys with fingerprint
       - add_ssh_keys:
-          fingerprints: ["a6:d5:3b:da:cc:83:25:75:8c:40:b0:bd:e7:03:6b:1f"]
+          fingerprints: ["ce:af:8a:90:9b:fa:10:ef:c0:9c:45:a7:c1:46:cb:45"]
       # attach workspace
       - attach_workspace:
           at: ~/
